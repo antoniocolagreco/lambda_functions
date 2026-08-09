@@ -8,6 +8,7 @@ const functions = readdirSync("src/functions").filter((file) =>
 const jobs = []
 
 for (const fn of functions) {
+	if (fn === "template") continue
 	const job = build({
 		entryPoints: [`src/functions/${fn}/index.ts`],
 		minify: true,
