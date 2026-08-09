@@ -1,8 +1,7 @@
-// src/email_reminder_lambda/index.ts
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-var FROM_EMAIL_ADDRESS = process.env.FROM_EMAIL_ADDRESS;
-var ses = new SESClient();
-var handler = async (event) => {
+const FROM_EMAIL_ADDRESS = process.env.FROM_EMAIL_ADDRESS;
+const ses = new SESClient();
+const handler = async (event) => {
   console.log("Received Event:", JSON.stringify(event));
   const sendEmailCommand = new SendEmailCommand({
     Source: FROM_EMAIL_ADDRESS,

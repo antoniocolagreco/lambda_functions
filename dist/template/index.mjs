@@ -1,5 +1,4 @@
-// src/template/index.ts
-var handler = async (event) => {
+const handler = async (event) => {
   console.log("Received Event:", JSON.stringify(event));
   const response = {
     statusCode: 200,

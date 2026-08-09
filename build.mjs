@@ -10,12 +10,11 @@ const jobs = []
 for (const fn of functions) {
 	const job = build({
 		entryPoints: [`src/${fn}/index.ts`],
-		bundle: true,
+		bundle: false,
 		platform: "node",
 		format: "esm",
 		target: "node26",
 		outfile: `dist/${fn}/index.mjs`,
-		external: ["@aws-sdk/*"],
 	})
 		.then(() => {
 			console.info(`Built ${fn}.`)
