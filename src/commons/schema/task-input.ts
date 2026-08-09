@@ -2,7 +2,7 @@ import * as v from "valibot"
 
 const TaskInputSchema = v.object({
 	email: v.pipe(v.string(), v.email()),
-	message: v.string(),
+	message: v.pipe(v.string(), v.minLength(1)),
 })
 
 type TaskInput = v.InferOutput<typeof TaskInputSchema>

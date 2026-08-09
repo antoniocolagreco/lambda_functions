@@ -10,10 +10,15 @@ const FROM_EMAIL_ADDRESS = process.env.FROM_EMAIL_ADDRESS
 
 const ses = new SESClient()
 
-type LambdaFunctionResult = {
-	statusCode: number
-	message: string
-}
+type LambdaFunctionResult =
+	| {
+			statusCode: 200
+			message: "Success"
+	  }
+	| {
+			statusCode: 400
+			message: "Invalid Data"
+	  }
 
 export const handler: Handler<
 	EventWithTaskInput,
@@ -26,7 +31,7 @@ export const handler: Handler<
 	if (!result.success) {
 		return {
 			statusCode: 400,
-			message: "Invalid input",
+			message: "Invalid Data",
 		}
 	}
 
@@ -46,6 +51,6 @@ export const handler: Handler<
 	await ses.send(sendEmailCommand)
 	return {
 		statusCode: 200,
-		message: "Success!",
+		message: "Success",
 	}
 }
