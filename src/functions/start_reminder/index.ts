@@ -1,6 +1,6 @@
 import { SFNClient, StartExecutionCommand } from "@aws-sdk/client-sfn"
 import { StartReminderInputSchema } from "@commons/schema/start-reminder-input"
-import type { APIGatewayProxyHandlerV2 } from "aws-lambda"
+import type { APIGatewayProxyHandler } from "aws-lambda"
 import * as v from "valibot"
 
 const STATE_MACHINE_ARN = process.env.STATE_MACHINE_ARN
@@ -9,7 +9,7 @@ const sfn = new SFNClient()
 
 const CORS_HEADERS = { "Access-Control-Allow-Origin": "*" }
 
-export const handler: APIGatewayProxyHandlerV2 = async (event) => {
+export const handler: APIGatewayProxyHandler = async (event) => {
 	console.log("Received Event:", JSON.stringify(event))
 
 	let body: unknown
