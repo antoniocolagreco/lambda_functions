@@ -1,0 +1,13 @@
+{
+	// Visit https://aka.ms/tsconfig to read more about this file
+	"compilerOptions": {
+		"module": "es2022",
+		"target": "esnext",
+		"moduleResolution": "bundler",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"noEmit": false
+	},
+	"include": ["src/**/*.ts"]
+}

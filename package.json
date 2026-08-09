@@ -1,0 +1,21 @@
+{
+	"name": "lambda_functions",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "biome check --write && node build.mjs",
+		"lint": "biome lint --write",
+		"check": "biome check --write"
+	},
+	"keywords": [],
+	"author": "Antonio Colagreco",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.162",
+		"@types/node": "^26.2.0",
+		"esbuild": "^0.28.1",
+		"typescript": "^7.0.2"
+	},
+	"dependencies": {
+		"@aws-sdk/client-ses": "^3.1106.0"
+	}
+}
